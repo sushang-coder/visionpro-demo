@@ -1,14 +1,14 @@
 ﻿# VisionPro演示
 
-这是一个基于 WinForms 的桌面程序，用来接海康工业相机，并调用 Cognex VisionPro 作业做图像采集、预览和结果显示。
+这是一个基于 WinForms 的桌面程序，用来连接海康工业相机，并调用 Cognex VisionPro 作业完成图像采集、预览和结果显示。
 
 ## English Summary
 
-A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the `02.vpp` job, previews camera images, and runs single or continuous processing.
+A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the `02.vpp` job, previews camera images, and supports single-run or continuous processing.
 
-## 项目说明
+## 这个项目现在能做什么
 
-现在这版程序已经能完成这些事情：
+目前已经打通的流程包括：
 
 - 初始化 MVS SDK
 - 枚举并连接海康相机
@@ -18,7 +18,7 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
 - 持续运行 VisionPro 作业
 - 在界面里显示图像、日志和状态
 
-默认优先匹配的相机型号是 `MV-CE060-10UC`。如果现场设备不是这个型号，需要按实际情况调整。
+程序默认优先匹配的相机型号是 `MV-CE060-10UC`。如果现场设备不是这个型号，需要按实际情况调整。
 
 ## 运行环境
 
@@ -29,12 +29,12 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
 - Windows
 - 海康工业相机设备
 
-工程目前使用 .NET Framework 4.8，`Debug` 和 `Release` 默认编译为 `x86`。另外还依赖：
+工程目标框架是 .NET Framework 4.8，`Debug` 和 `Release` 默认都编译为 `x86`。另外还依赖这些组件：
 
 - `Cognex.VisionPro.*`
 - `MvCameraControl.Net.dll`
 
-如果 VisionPro 或 MVS SDK 没装好，工程通常不能正常编译或运行。
+如果 VisionPro 或 MVS SDK 没装好，工程通常没法正常编译或运行。
 
 ## 目录结构
 
@@ -52,7 +52,7 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
    └─ 02.vpp
 ```
 
-几个主要文件：
+主要文件如下：
 
 - `demo1.sln`：解决方案入口
 - `demo1/demo1.csproj`：主工程文件
@@ -63,16 +63,16 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
 - `demo1/02.vpp`：VisionPro 作业文件
 - `demo1/App.config`：运行配置
 
-## 界面功能
+## 界面和操作
 
-程序里现在有这几个按钮：
+程序里现在有四个主要按钮：
 
 - “显示图像”：启动实时预览
 - “关闭摄像头”：停止取流并关闭设备
 - “单次运行”：抓一帧并执行一次 `02.vpp`
 - “持续运行”：循环采集并持续执行作业
 
-界面分成三块：
+界面本身分成三块：
 
 - 图像显示区
 - 日志区
@@ -111,7 +111,7 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
 - 仓库里还没有截图、录屏、安装包和完整部署说明
 - 如果 SDK 安装路径和工程引用路径不一致，需要手动修正引用
 
-## 仓库建议
+## 仓库里建议放什么
 
 建议长期保留：
 
@@ -130,7 +130,7 @@ A WinForms desktop demo for Hikrobot cameras and Cognex VisionPro. It loads the 
 
 如果后面要分发可执行程序，优先放到 GitHub Releases，不要直接堆在源码目录。
 
-## 后续可补
+## 后面还可以补什么
 
 - `assets/`：界面截图、运行 GIF、演示视频封面
 - `docs/`：VisionPro / MVS SDK 安装说明、部署步骤、常见问题
